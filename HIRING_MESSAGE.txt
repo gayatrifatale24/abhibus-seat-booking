@@ -4,7 +4,7 @@ I built a real-time bus seat-booking prototype for this role: React + TypeScript
 
 AI_PROCESS.md walks through how I used an AI agent, including where it was wrong and how I caught it.
 
-Repository: [REPO LINK]
+Repository: https://github.com/gayatrifatale24/abhibus-seat-booking
 Live demo: [LIVE LINK]
 
 Thank you,

@@ -5,7 +5,7 @@
 ## TL;DR
 
 * **Tooling:** I used **Grok Bot**, an AI assistant with a coding agent that has its own Linux sandbox (shell, Node 24, a headless Chrome). It wrote the code, ran it, tested it and took the screenshots. My role was product owner and reviewer: I set the goal and constraints, and I decided what "done" means.
-* **Time:** about 25 minutes of agent wall-clock time on 11 Nov 2026 (roughly 2:15–2:40 PM IST), from an empty folder to tested code, Docker files, docs and screenshots.
+* **Time:** about 25 minutes of agent wall-clock time on 11 Nov 2026 (roughly 2:15–2:35 PM IST), from an empty folder to tested code, Docker files, docs and screenshots.
 * **Where AI paid off:** scaffolding a layered Express + React/TS project, writing the SQL schema and seed data, and producing a broad test suite quickly. In particular, it drove a real two-browser check of the WebSocket flow.
 * **Where it went wrong:** 9 real issues, listed below. Most were caught by running the app, reading output carefully, or deliberately breaking the code to check that the tests would notice. None were caught by the generated code "looking right".
 
