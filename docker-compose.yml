@@ -1,0 +1,13 @@
+services:
+  app:
+    build: .
+    ports:
+      - "4000:4000"
+    environment:
+      JWT_SECRET: ${JWT_SECRET:-change-me-in-production}
+      HOLD_TTL_MS: ${HOLD_TTL_MS:-300000}
+    volumes:
+      - abhibus-data:/data
+    restart: unless-stopped
+volumes:
+  abhibus-data:
