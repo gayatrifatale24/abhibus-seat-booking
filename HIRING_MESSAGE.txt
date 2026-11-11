@@ -1,0 +1,11 @@
+Hi AbhiBus team,
+
+I built a real-time bus seat-booking prototype for this role: React + TypeScript frontend, Node/Express REST API with JWT, SQLite, and Socket.IO. Seats you select are held for 5 minutes and update instantly in other users' browsers. Concurrent holds are atomic (DB constraint + IMMEDIATE transactions), and a multi-threaded race test proves no double booking. There are 37 tests, Docker files, and a README covering design trade-offs.
+
+AI_PROCESS.md walks through how I used an AI agent, including where it was wrong and how I caught it.
+
+Repository: [REPO LINK]
+Live demo: [LIVE LINK]
+
+Thank you,
+Gayatri Fatale

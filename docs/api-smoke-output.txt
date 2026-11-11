@@ -1,0 +1,22 @@
+== GET /api/health
+{"status":"ok"}
+== GET /api/cities
+Bengaluru, Chennai, Hyderabad, Tirupati, Vijayawada, Visakhapatnam
+== GET /api/trips/search
+4 trips; first: #43 Morning Star Travels 2026-11-12T06:00:00+05:30 from ₹1049, 25 seats left
+== POST /api/auth/login
+token: eyJhbGciOiJIUzI1NiIsInR5…
+== POST /api/trips/43/holds ["S2","S3"]
+{"holdId":"a83d3d92-ec6d-45e4-aca8-7a19c4208cf8","tripId":43,"seats":["S2","S3"],"expiresAt":1794387835402,"totalFare":2098}
+== same seats by another user -> 409
+{"error":{"code":"SEAT_UNAVAILABLE","message":"Seat S2 was just taken by another traveller","details":{"seats":["S2"]}}}  [HTTP 409]
+== POST /api/bookings
+booking ABMWBW0BLB97EC CONFIRMED seats=S2,S3 total=₹2098
+== GET /api/bookings
+ABMWBW0BLB97EC:CONFIRMED
+== POST /api/bookings/ABMWBW0BLB97EC/cancel
+CANCELLED, refund ₹1049 (50%)
+== no token -> 401
+{"error":{"code":"UNAUTHENTICATED","message":"Please log in to continue"}}  [HTTP 401]
+== bad input -> 400
+{"error":{"code":"VALIDATION_ERROR","message":"Invalid request","details":[{"path":"date","message":"date must be YYYY-MM-DD"}]}}  [HTTP 400]
